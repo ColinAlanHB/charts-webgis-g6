@@ -1,0 +1,102 @@
+
+const pressureData=[{
+	"value": 603.5979,
+	"unit": "m³／h",
+	"max": "1400",
+	"min": "600",
+	"blockName": "管道一流量",
+	"type": "ll",
+    'image': "panel_bg1"
+}, {
+	"value": 1029.3154,
+	"unit": "m³／h",
+	"max": "1400",
+	"min": "600",
+	"blockName": "管道二流量",
+	"type": "ll",
+    'image': "panel_bg1"
+}, {
+	"value": 1031.3921,
+	"unit": "m³／h",
+	"max": "1400",
+	"min": "600",
+	"blockName": "管道三流量",
+	"type": "ll",
+    'image': "panel_bg1"
+}]
+const trafficData = [{
+	"value": 61.3384,
+	"unit": "m",
+	"max": "100",
+	"min": "0",
+	"blockName": "一液位",
+	"type": "sw",
+    'image': "panel_bg2"
+}, {
+	"value": 6.6856,
+	"unit": "m",
+	"max": "100",
+	"min": "0",
+	"blockName": "二液位",
+	"type": "sw",
+    'image': "panel_bg2"
+}, {
+	"value": 13.1406,
+	"unit": "m",
+	"max": "100",
+	"min": "0",
+	"blockName": "三液位",
+	"type": "sw",
+    'image': "panel_bg2"
+}, ];
+const qualityData = [ {
+	"value": 12.9005,
+	"unit": "m",
+	"max": "20",
+	"min": "0",
+	"blockName": "清水池一液位",
+	"type": "sw",
+    'image': "panel_bg3"
+}, {
+	"value": 18.9923,
+	"unit": "m",
+	"max": "20",
+	"min": "0",
+	"blockName": "清水池二液位",
+	"type": "sw",
+    'image': "panel_bg3"
+}, {
+	"value": 11.8075,
+	"unit": "m",
+	"max": "20",
+	"min": "0",
+	"blockName": "清水池三液位",
+	"type": "sw",
+    'image': "panel_bg3"
+},];
+const levelData = [{
+	"value": 2.6425,
+	"unit": "mg/L",
+	"max": "3",
+	"min": "0",
+	"blockName": "出厂水余氯值",
+	"type": "sz",
+    'image': "panel_bg1"
+}, {
+	"value": 3.703,
+	"unit": "NTU",
+	"max": "3",
+	"min": "0",
+	"blockName": "出厂水浊度",
+	"type": "sz",
+    'image': "panel_bg1"
+}, {
+	"value": 7.6866,
+	"unit": null,
+	"max": "8.5",
+	"min": "6.5",
+	"blockName": "出厂水pH",
+	"type": "sz",
+    'image': "panel_bg1"
+}];
+export {pressureData,trafficData,qualityData,levelData}

@@ -29,7 +29,7 @@ module.exports = {
     },
   },
   chainWebpack: (config) => {
-    config.resolve.alias.set("@", resolve("src")).set("@ap", resolve("src"));
+    config.resolve.alias.set("@", resolve("src"));
     config.module
       .rule("fonts")
       .use("url-loader")
