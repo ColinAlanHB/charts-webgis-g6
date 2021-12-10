@@ -13,7 +13,7 @@ export const dataSource = {
 			x: 90,
 			y: 153.5,
 			size: [307, 251],
-			img: require('@/assets/images/diagram/pic_water@2x.png'),
+			img: require('@/assets/diagram/pic_water@2x.png'),
 			type: 'image',
 			label: '水源地',
 			labelCfg: {
@@ -29,7 +29,7 @@ export const dataSource = {
 			x: 384,
 			y: 159,
 			size: [90, 80],
-			img: require('@/assets/images/diagram/pic_pump@2x.png'),
+			img: require('@/assets/diagram/pic_pump@2x.png'),
 			type: 'image',
 			label: '水泵',
 			labelCfg: {
@@ -46,7 +46,7 @@ export const dataSource = {
 			x: 537.5,
 			y: 95,
 			size: [189, 124],
-			img: require('@/assets/images/diagram/pic_waterworks@2x.png'),
+			img: require('@/assets/diagram/pic_waterworks@2x.png'),
 			type: 'image',
 			label: '           水厂',
 			labelCfg: {
@@ -64,7 +64,7 @@ export const dataSource = {
 			x: 712,
 			y: 66,
 			size: [34, 64],
-			img: require('@/assets/images/diagram/pic_metering@2x.png'),
+			img: require('@/assets/diagram/pic_metering@2x.png'),
 			type: 'image',
 			label: '测压点',
 			labelCfg: {
@@ -92,7 +92,7 @@ export const dataSource = {
 			x: 850.5,
 			y: 84.5,
 			size: [73, 111],
-			img: require('@/assets/images/diagram/pic_site@2x.png'),
+			img: require('@/assets/diagram/pic_site@2x.png'),
 			type: 'image',
 			label: '加压泵站',
 			labelCfg: {
@@ -109,7 +109,7 @@ export const dataSource = {
 			x: 1003.5,
 			y: 76.5,
 			size: [63, 71],
-			img: require('@/assets/images/diagram/pic_large_meter@2x.png'),
+			img: require('@/assets/diagram/pic_large_meter@2x.png'),
 			type: 'image',
 			label: '大水表',
 			labelCfg: {
@@ -125,7 +125,7 @@ export const dataSource = {
 			x: 1157.5,
 			y: 87,
 			size: [167, 126],
-			img: require('@/assets/images/diagram/pic_factory@2x.png'),
+			img: require('@/assets/diagram/pic_factory@2x.png'),
 			type: 'image',
 			label: '               工厂',
 			labelCfg: {
@@ -142,7 +142,7 @@ export const dataSource = {
 			x: 712,
 			y: 188,
 			size: [34, 64],
-			img: require('@/assets/images/diagram/pic_metering@2x.png'),
+			img: require('@/assets/diagram/pic_metering@2x.png'),
 			type: 'image',
 			label: '测压点',
 			labelCfg: {
@@ -170,7 +170,7 @@ export const dataSource = {
 			x: 850.5,
 			y: 198.5,
 			size: [73, 111],
-			img: require('@/assets/images/diagram/pic_site@2x.png'),
+			img: require('@/assets/diagram/pic_site@2x.png'),
 			type: 'image',
 			label: '加压泵站',
 			labelCfg: {
@@ -186,7 +186,7 @@ export const dataSource = {
 			x: 972,
 			y: 170,
 			size: [46, 52],
-			img: require('@/assets/images/diagram/pic_meter@2x.png'),
+			img: require('@/assets/diagram/pic_meter@2x.png'),
 			type: 'image',
 			label: '水表',
 			labelCfg: {
@@ -202,7 +202,7 @@ export const dataSource = {
 			x: 1014.5,
 			y: 244.5,
 			size: [113, 75],
-			img: require('@/assets/images/diagram/pic_pool@2x.png'),
+			img: require('@/assets/diagram/pic_pool@2x.png'),
 			type: 'image',
 			label: '水箱',
 			labelCfg: {
@@ -219,7 +219,7 @@ export const dataSource = {
 			x: 1151,
 			y: 244.5,
 			size: [84, 92],
-			img: require('@/assets/images/diagram/pic_water_pump@2x.png'),
+			img: require('@/assets/diagram/pic_water_pump@2x.png'),
 			type: 'image',
 			label: '             二供设备',
 			labelCfg: {
@@ -238,7 +238,7 @@ export const dataSource = {
 			x: 1278.5,
 			y: 250,
 			size: [111, 200],
-			img: require('@/assets/images/diagram/pic_building@2x.png'),
+			img: require('@/assets/diagram/pic_building@2x.png'),
 			type: 'image',
 			label: '                             居民楼',
 			labelCfg: {
@@ -268,7 +268,7 @@ export const dataSource = {
 			x: 1528,
 			y: 80,
 			size: [175, 103.2],
-			img: require('@/assets/images/diagram/pic_building.png'),
+			img: require('@/assets/diagram/pic_building.png'),
 			type: 'image',
 			label: '污水厂',
 			labelCfg: {
@@ -284,7 +284,7 @@ export const dataSource = {
 			x: 1536,
 			y: 220,
 			size: [127, 88.4],
-			img: require('@/assets/images/diagram/pic_water.png'),
+			img: require('@/assets/diagram/pic_water.png'),
 			type: 'image',
 			label: '江河湖海',
 			labelCfg: {
@@ -297,7 +297,7 @@ export const dataSource = {
 			x: 1750,
 			y: 184,
 			size: [191, 256],
-			img: require('@/assets/images/diagram/pic_city@2x.png'),
+			img: require('@/assets/diagram/pic_city@2x.png'),
 			type: 'image',
 			label: '                                   水司',
 			labelCfg: {
@@ -326,7 +326,7 @@ export const dataSource = {
 			x: 220,
 			y: 340,
 			size: [85, 102],
-			img: require('@/assets/images/diagram/pic_system@2x.png'),
+			img: require('@/assets/diagram/pic_system@2x.png'),
 			type: 'image',
 			label: '                         源水管理',
 			labelCfg: {
@@ -367,7 +367,7 @@ export const dataSource = {
 			x: 364,
 			y: 336.5,
 			size: [84, 109],
-			img: require('@/assets/images/diagram/pic_file@2x.png'),
+			img: require('@/assets/diagram/pic_file@2x.png'),
 			type: 'image',
 			label: '                         制水管理',
 			labelCfg: {
@@ -396,7 +396,7 @@ export const dataSource = {
 			x: 511,
 			y: 345,
 			size: [84, 93],
-			img: require('@/assets/images/diagram/pic_administration@2x.png'),
+			img: require('@/assets/diagram/pic_administration@2x.png'),
 			type: 'image',
 			label: '                         供水管理',
 			labelCfg: {
@@ -426,7 +426,7 @@ export const dataSource = {
 			x: 650,
 			y: 345,
 			size: [81, 96],
-			img: require('@/assets/images/diagram/pic_service@2x.png'),
+			img: require('@/assets/diagram/pic_service@2x.png'),
 			type: 'image',
 			label: '                         营销客服',
 			labelCfg: {
@@ -444,7 +444,7 @@ export const dataSource = {
 			x: 600,
 			y: 513.5,
 			size: [220, 183],
-			img: require('@/assets/images/diagram/pic_date_factory@2x.png'),
+			img: require('@/assets/diagram/pic_date_factory@2x.png'),
 			type: 'image',
 			label: '                                  数据工厂',
 			labelCfg: {
@@ -461,7 +461,7 @@ export const dataSource = {
 			x: 880,
 			y: 513.5,
 			size: [239, 163],
-			img: require('@/assets/images/diagram/pic_date_maintain@2x.png'),
+			img: require('@/assets/diagram/pic_date_maintain@2x.png'),
 			type: 'image',
 			label: '                                  数据运维',
 			labelCfg: {
@@ -478,7 +478,7 @@ export const dataSource = {
 			x: 1160.5,
 			y: 530,
 			size: [220, 156],
-			img: require('@/assets/images/diagram/pic_dashbord_data@2x.png'),
+			img: require('@/assets/diagram/pic_dashbord_data@2x.png'),
 			type: 'image',
 			label: '                                  数据质量',
 			labelCfg: {
@@ -495,7 +495,7 @@ export const dataSource = {
 			x: 1440.5,
 			y: 513.5,
 			size: [189, 176],
-			img: require('@/assets/images/diagram/pic_date_assets@2x.png'),
+			img: require('@/assets/diagram/pic_date_assets@2x.png'),
 			type: 'image',
 			label: '                                  数据资产',
 			labelCfg: {
@@ -512,7 +512,7 @@ export const dataSource = {
 			x: 1700,
 			y: 527.5,
 			size: [192, 135],
-			img: require('@/assets/images/diagram/pic_date_service@2x.png'),
+			img: require('@/assets/diagram/pic_date_service@2x.png'),
 			type: 'image',
 			label: '                                  数据服务',
 			labelCfg: {
@@ -529,7 +529,7 @@ export const dataSource = {
 			x: 220,
 			y: 453,
 			size: [463, 70],
-			img: require('@/assets/images/diagram/pic_huge_pool@2x.png'),
+			img: require('@/assets/diagram/pic_huge_pool@2x.png'),
 			type: 'image',
 			label: '供水生态',
 			labelCfg: {
@@ -546,7 +546,7 @@ export const dataSource = {
 			x: 53.5,
 			y: 512,
 			size: [127, 58],
-			img: require('@/assets/images/diagram/pic_secondary_pool@2x.png'),
+			img: require('@/assets/diagram/pic_secondary_pool@2x.png'),
 			type: 'image',
 			label: '源水',
 			labelCfg: {
@@ -563,7 +563,7 @@ export const dataSource = {
 			x: 164.5,
 			y: 512,
 			size: [127, 58],
-			img: require('@/assets/images/diagram/pic_secondary_pool@2x.png'),
+			img: require('@/assets/diagram/pic_secondary_pool@2x.png'),
 			type: 'image',
 			label: '净水',
 			labelCfg: {
@@ -580,7 +580,7 @@ export const dataSource = {
 			x: 278.5,
 			y: 512,
 			size: [127, 58],
-			img: require('@/assets/images/diagram/pic_secondary_pool@2x.png'),
+			img: require('@/assets/diagram/pic_secondary_pool@2x.png'),
 			type: 'image',
 			label: '供水',
 			labelCfg: {
@@ -597,7 +597,7 @@ export const dataSource = {
 			x: 390.5,
 			y: 512,
 			size: [127, 58],
-			img: require('@/assets/images/diagram/pic_secondary_pool@2x.png'),
+			img: require('@/assets/diagram/pic_secondary_pool@2x.png'),
 			type: 'image',
 			label: '售水',
 			labelCfg: {
@@ -615,7 +615,7 @@ export const dataSource = {
 			x: 27,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '源水\n生产',
 			labelCfg: {
@@ -628,7 +628,7 @@ export const dataSource = {
 			x: 83,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '源水\n检测',
 			labelCfg: {
@@ -641,7 +641,7 @@ export const dataSource = {
 			x: 137,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '制水\n生产',
 			labelCfg: {
@@ -654,7 +654,7 @@ export const dataSource = {
 			x: 193,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '制水\n检测',
 			labelCfg: {
@@ -667,7 +667,7 @@ export const dataSource = {
 			x: 250,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '管网',
 			labelCfg: {
@@ -680,7 +680,7 @@ export const dataSource = {
 			x: 306,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '二供',
 			labelCfg: {
@@ -693,7 +693,7 @@ export const dataSource = {
 			x: 364,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '报装\n营收',
 			labelCfg: {
@@ -706,7 +706,7 @@ export const dataSource = {
 			x: 420,
 			y: 613,
 			size: [108, 128],
-			img: require('@/assets/images/diagram/pic_small_pool@2x.png'),
+			img: require('@/assets/diagram/pic_small_pool@2x.png'),
 			type: 'image',
 			label: '抄表\n客服',
 			labelCfg: {

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" style="width:100%;height:100%">
     <div class="nav">
       <a-radio-group default-value="charts" button-style="solid" @change='change'>
         <a-radio-button value="charts">

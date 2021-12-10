@@ -152,7 +152,7 @@ const edges = [{
     "target": "api_221",
 }];
 
-const nodes1 = [{
+const bloodNodes = [{
     "id": "测试1",
     "label": "测试1",
     "modelLayer": "DEV",
@@ -198,7 +198,7 @@ const nodes1 = [{
     "focus": false
 }]
 
-const edges1 = [{
+const bloodEdges = [{
     "source": "测试2",
     "target": "测试8",
 }, {
@@ -215,4 +215,4 @@ const edges1 = [{
     "target": "测试2",
 }]
 
-export {edges,nodes,nodes1,edges1}
+export {edges,nodes,bloodNodes,bloodEdges}
