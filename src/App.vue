@@ -1,17 +1,17 @@
 <template>
   <div id="app" style="width:100%;height:100%">
     <div class="nav">
-      <a-radio-group default-value="charts" button-style="solid" @change='change'>
-        <a-radio-button value="charts">
+      <a-radio-group default-value="/charts" button-style="solid" @change='change'>
+        <a-radio-button value="/charts">
           图表
         </a-radio-button>
-        <a-radio-button value="g6">
+        <a-radio-button value="/g6">
           组态
         </a-radio-button>
-        <a-radio-button value="webgis">
+        <a-radio-button value="/webgis">
           地图
         </a-radio-button>
-        <a-radio-button value="panel">
+        <a-radio-button value="/panel">
           仪表盘
         </a-radio-button>
       </a-radio-group>
@@ -29,7 +29,7 @@ export default {
     change(e){
       this.$router.push(e.target.value);
     }
-  }
+  },
 }
 </script>
 
