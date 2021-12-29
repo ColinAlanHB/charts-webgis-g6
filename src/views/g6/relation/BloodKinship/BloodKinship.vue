@@ -149,7 +149,6 @@ export default {
 						break;
 					}
 				}
-				// console.log(this.extendLayer, 'extendLayer', '----------', this.shrinkLayer, 'shrinkLayer');
 			},
 			deep: true,
 		},
@@ -562,7 +561,6 @@ export default {
 					: this.layerObj.sourceList.length;
 			this.shrinkLayer = this.maxLayer; // 缩放控制
 			this.extendLayer = this.maxLayer; // 展开控制
-			// console.log(this.layerObj.targetList, this.layerObj.sourceList, this.maxLayer);
 		},
 		// 布局层次数据
 		handleLayoutList() {
@@ -640,8 +638,6 @@ export default {
 			setTimeout(() => {
 				this.refreshGraph(this.dataList, true);
 			}, 100);
-			// console.log(nodeList, 'nodeList', sortArr, 'sortArr');
-			// console.log(this.layoutList, 'layoutList');
 		},
 
 	},

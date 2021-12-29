@@ -218,12 +218,12 @@ function genLineSeries(i) {
 }
 
 // 带marker折线图
-function genMarkerLineSeries(i, markNum, name) {
+function genMarkerLineSeries(i, markNum) {
   const _idx = i % _colors.length;
   let markLine;
   if (markNum) {
     markLine = {
-      name: name,
+      name: '测试',
       silent: false,
       animation: true,
       symbol: "none",
@@ -294,7 +294,6 @@ function genVisualMap(_options, markNum, releationObj, i) {
       ],
     });
   });
-  console.log(_options.visualMap, "_options.visualMap");
 }
 
 // 面积折线图
@@ -372,7 +371,6 @@ function genSmoothAreaLineSeries(i) {
   };
 }
 
-
 // 柱状图
 function genBarSeries(i) {
   return {
@@ -402,19 +400,9 @@ function genStackBarLegend(i) {
   return {
     type: "scroll",
     bottom: zoom ? 18 : 15,
-    // padding: [5, 20, 5, 0],
     icon: "rect",
     itemWidth: 14,
     itemHeight: 14,
-    // itemGap: 20,
-    // pageIconSize: zoom ? 16 : 10,
-    // pageTextStyle: {
-    //   fontSize: zoom ? 14 : 12
-    // },
-    // textStyle: {
-    //   padding: [2, 0, 0, 0],
-    //   fontSize: zoom ? 14 : 12
-    // }
     padding: [0, 15, 0, 15],
   };
 }
@@ -472,32 +460,6 @@ function genComposeOptions(typeArr, markNum) {
   });
   const typeObj = typeArr[0];
 
-  _axisOptions.legend = typeObj.cType === "stackBar" ? genStackBarLegend() : defineLegend();
-  return _axisOptions;
-}
-// 生成简单图表的组合配置2 含多个基线版本
-function genComposeOptions2(typeArr, startNum, endNum) {
-  // 仅支持折线图和柱状图组合，且坐标轴一致
-  let _axisOptions = genAxisOption(typeArr[0].type, null, startNum, endNum);
-  _axisOptions.series = typeArr.map((item, i) => {
-    switch (item.cType) {
-      case "line":
-        return genLineSeries(i);
-      case "areaLine":
-        return genAreaLineSeries(i);
-      case "smoothAreaLine":
-        return genSmoothAreaLineSeries(i);
-      case "bar":
-        return genBarSeries(i);
-      case "stackBar":
-        return genStackBarSeries(i);
-      case "markerLine":
-        return genMarkerLineSeries(i, item.markNum, item.name);
-      default:
-        console.log(`暂不支持${type}类型的${cType}图表组合！`);
-    }
-  });
-  const typeObj = typeArr[0];
   _axisOptions.legend = typeObj.cType === "stackBar" ? genStackBarLegend() : defineLegend();
   return _axisOptions;
 }
@@ -700,8 +662,6 @@ function genHollowPieOptions(data1, data2) {
     },
     legend: {
       type: "scroll",
-      // orient: "vertical",
-      // top: "middle",
       bottom: "7%",
       icon: "rect",
       itemWidth: 14,
@@ -914,7 +874,6 @@ function genRosePieOptions(data) {
         radius: ["25%", "70%"],
         roseType: "area",
         itemStyle: {
-          // borderRadius: 8
         },
         label: {
           show: false,
@@ -935,10 +894,7 @@ function genRosePieOptions(data) {
 }
 // 生成词云图
 function genWordCloudOptions(data) {
-  console.log(1231312);
-  // const _colors = ["#70A6FF", "#66C5FF", "#87CE40", "#FFDF53", "#817DFF"];
   let _options = {
-    // backgroundColor: "#12161d",
     title: {
       top: "45%",
       left: "25%",
@@ -1042,7 +998,6 @@ function genRadarOptions(seriesLen) {
     { color1: "rgba(255,194,70,0.3)", color2: "rgba(255,212,59,0.3)" },
   ];
   let _options = {
-    // backgroundColor: "#12161d",
     tooltip: {
       confine: true,
       axisPointer: {
@@ -1085,7 +1040,7 @@ function genRadarOptions(seriesLen) {
     },
     radar: [
       {
-        // shape: "polygon",
+
         splitNumber: 3,
         center: zoom ? ["53%", "40%"] : ["50%", "45%"],
         radius: zoom ? ["2%", "45%"] : ["2%", "60%"],
@@ -1156,7 +1111,6 @@ export default function (_zoom) {
   zoom = !!_zoom;
   return {
     compose: genComposeOptions,
-    compose2: genComposeOptions2,
     reverseBar: genReverseBarOptions,
     reverseStackBar: genReverseStackBarOptions,
     circlePie: genCirclePieOptions,

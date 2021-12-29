@@ -1076,7 +1076,6 @@ const cockpit = function (themeType, originParams = {}) {
     },
     originParams
   );
-  // console.log(params, "111111222222");
   let startAngle = totalAngle + offsetAngle;
   let endAngle;
   let rate;

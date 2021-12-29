@@ -21,7 +21,6 @@ export default {
 	mounted() {
 		G6.registerNode('dom-node', {
 			draw: (cfg, group) => {
-				// console.log(cfg);
 				//最外面的那层
 				const shape = group.addShape('rect', {
 					attrs: {

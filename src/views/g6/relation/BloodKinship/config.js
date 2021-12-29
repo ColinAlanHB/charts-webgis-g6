@@ -404,7 +404,6 @@ export function creatCustomEdge(G6, layoutList, dataList) {
 							index = i + 1;
 						}
 					});
-					// console.log(cfg.source, index, len, 222, list1);
 				}
 			}
 			const shape = group.addShape('path', {
@@ -455,7 +454,6 @@ export function creatCustomEdge(G6, layoutList, dataList) {
 			}
 		},
 		getPath(startPoint, endPoint, index, len, bool) {
-			// console.log(index, len, bool, 333);
 			if (len <= 3) {
 				return [
 					['M', startPoint.x, startPoint.y],

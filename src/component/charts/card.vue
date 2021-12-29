@@ -13,7 +13,7 @@
 <script>
   import * as echarts from "echarts";
   import echartResize from "@/mixins/echartResize";
-  import { mergeObject, deepCopy } from "./tools";
+  import { mergeObject } from "./tools";
   import genEchartOption from "./echatOptions";
   export default {
     mixins: [echartResize],
@@ -26,9 +26,9 @@
         type: Array,
         default: () => [],
       },
-      echart: {
-        type: Object,
-        default: () => ({}),
+      series: {
+        type: Array,
+        default: () => [],
       },
       zoom: {
         type: Boolean,
@@ -42,8 +42,6 @@
     data() {
       return {
         chart: null,
-        zoomend: 20,
-        zoomstart: 0,
       };
     },
     watch: {
@@ -71,26 +69,20 @@
         this.initChart();
       },
       initData() {
-        function foramateRight(value) {
-          return value.toFixed(0) + "%";
-        }
-        function foramateLeft(value) {
-          return value.toFixed(0);
-        }
         if (!this.records || !this.records.length) {
           return;
         }
-        const { cType: _cType } = this.echart.series[0] || { cTpye: "line" },
+        const { cType: _cType } = this.series[0] || { cTpye: "line" },
           EchartOption = genEchartOption(this.zoom);
         if (~["line", "lineArea", "smoothAreaLine", "stackBar", "bar"].indexOf(_cType)) {
           // 基本类型组合，包括折线、面积折线、平滑面积折线、柱状图、堆叠柱状图
           let _baseOptions = {};
-          let series = this.echart.series.map((v) => ({
+          let series = this.series.map((v) => ({
             type: v.type,
             cType: _cType === "lineArea" ? "areaLine" : _cType,
           }));
-          _baseOptions = EchartOption.compose2(series, this.zoomstart, this.zoomend);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = EchartOption.compose(series);
+          _baseOptions = mergeObject(_baseOptions,{series:this.series});
           _baseOptions.xAxis[0].data = this.records.map((v) => v[this.columns[0].dataIndex]);
           _baseOptions.series.forEach((v, i) => {
             v.name = this.columns[1 + i].title;
@@ -98,48 +90,11 @@
               return item[this.columns[1 + i]["dataIndex"]];
             });
           });
-          //添加右侧百分比轴
-          let index = -1;
-          this.columns.map((item, i) => {
-            if (item.title.includes("率")) {
-              index = i;
-            }
-          });
-          /**
-           *
-           * @param rightSeries 判断 series 中是否有折线图的数据
-           *
-           * @param leftSeries 判断 series 中是否有除了折线图以外的类型，当都满足时就添加双坐标轴，折线图坐标轴在右边
-           */
-          let rightSeries = series.find((x) => x.type === "line");
-          let leftSeries = series.find((x) => x.type !== "line");
-          if (_baseOptions.series.length > 1 && rightSeries && leftSeries && index != -1) {
-            let yAxis1 = deepCopy(_baseOptions.yAxis[0]);
-            yAxis1.axisLabel.formatter = foramateRight;
-            _baseOptions.yAxis = _baseOptions.yAxis.concat(yAxis1);
-            _baseOptions.yAxis[0].axisLabel.formatter = foramateLeft;
-            _baseOptions.yAxis[1].position = "right";
-            // 判断哪一项是有百分比的
-            //作此判断的条件：columns的第一项必须是横轴表示年月的
-            _baseOptions.series[index - 1].yAxisIndex = 1;
-            _baseOptions.yAxis[0].min = 0;
-            _baseOptions.yAxis[1].min = 0;
-            _baseOptions.series[index - 1].itemStyle ? (_baseOptions.series[index - 1].itemStyle.color = "#FFB800") : "";
-            //左Y轴
-            let array = [];
-            _baseOptions.series.forEach((element) => {
-              if (element.yAxisIndex == 0) {
-                let numberArray = element.data.filter((item) => item != undefined);
-                let numMax = Math.max.apply(null, numberArray);
-                array.push(numMax);
-              }
-            });
-          }
           this.echartOptions = _baseOptions;
         } else if (_cType === "reverseBar") {
           // 反转进度柱状图
           let _baseOptions = EchartOption.reverseBar(this.columns.length - 1);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           _baseOptions.yAxis[0].data = this.records.map((v) => v[this.columns[0].dataIndex]);
           _baseOptions.series[0].data = this.records.map((v) => (v[this.columns[1].dataIndex] * 100).toFixed(2));
           _baseOptions.series[0].realtimeSort = true;
@@ -147,7 +102,7 @@
         } else if (_cType === "reverseStackBar") {
           // 反转堆叠柱状图
           let _baseOptions = EchartOption.reverseStackBar(this.columns.length - 1);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           _baseOptions.yAxis[0].data = this.records.map((v) => v[this.columns[0].dataIndex]);
           _baseOptions.series.forEach((v, i) => {
             v.name = this.columns[1 + i].title;
@@ -173,7 +128,7 @@
             }
           });
           let _baseOptions = EchartOption.circlePie(_data);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           const arrSum = (data) => {
             let sum = 0;
             for (let key in data) {
@@ -201,7 +156,7 @@
             }
           });
           let _baseOptions = EchartOption.pie(_data);
-          _baseOptions = mergeObject(this.echart, _baseOptions);
+          _baseOptions = mergeObject({series:this.series}, _baseOptions);
           this.echartOptions = _baseOptions;
         } else if (_cType === "word-cloud") {
           // 云词
@@ -220,7 +175,7 @@
             }
           });
           let _baseOptions = EchartOption.wordCloud(_data);
-          _baseOptions = mergeObject(this.echart, _baseOptions);
+          _baseOptions = mergeObject({series:this.series}, _baseOptions);
           this.echartOptions = _baseOptions;
         } else if (_cType === "rosePie") {
           // 玫瑰饼图
@@ -239,12 +194,12 @@
             }
           });
           let _baseOptions = EchartOption.rosePie(_data);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           this.echartOptions = _baseOptions;
         } else if (_cType === "radar") {
           // 雷达图
           let _baseOptions = EchartOption.radar(this.records.length);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           _baseOptions.radar[0].indicator = this.columns.map((v) => ({
             name: v.title,
             max: v.max,
@@ -284,7 +239,7 @@
           });
 
           let _baseOptions = EchartOption.hollow(data1, data2);
-          _baseOptions = mergeObject(_baseOptions, this.echart);
+          _baseOptions = mergeObject(_baseOptions, {series:this.series});
           this.echartOptions = _baseOptions;
         }
       },
@@ -315,24 +270,12 @@
 <style lang="less" scoped>
   .charts-box {
     min-height: 200px;
+    width: 50%;
   }
   .card {
     & > div {
       width: 100%;
       height: 100%;
-    }
-
-    .wpg-spin {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      // height: 300px;
-
-      /deep/ &-text {
-        margin-top: 10px;
-      }
     }
   }
 
@@ -340,7 +283,5 @@
     height: 100%;
     min-height: 200px;
   }
-  .empty {
-    padding: 10px;
-  }
+
 </style>
